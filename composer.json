@@ -14,7 +14,11 @@
     "require": {
         "php": ">=5.3.3"
     },
-   
+   "scripts": {
+   	"post-create-project-cmd": [
+            "php -r \"copy('fuel/vendor/rizacelik/scaffold/example.php', 'fuel/app/tasks/example.php');\""
+        ]
+   },
 	"extra": {
 		"branch-alias": {
 			"dev-master": "1.0-dev"
