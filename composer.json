@@ -18,8 +18,5 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "config": {
-        "vendor-dir": "fuel/vendor"
-    },
     "minimum-stability": "dev"
 }
