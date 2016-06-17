@@ -8,13 +8,18 @@
       "email": "rizacelik@gmail.com"
     }
   ],
- "config": {
-        "vendor-dir": "fuel/app/tasks"
-    },
+    "type": "library",
+    "license": ["GPL-2.0","LGPL-2.1"],
+    "version": "1.0",
     "require": {
-        "rizacelik/scaffold": "1.0.*"
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "fuel/docs": "1.8.*"
+    },
+    "extra": {
+        "installer-paths": {
+            "rizacelik/scaffold/{$name}": ["fuel/app/tasks"]
+        }
     }
-    ,
-  "minimum-stability": "dev",
-  "prefer-stable" : true
 }
