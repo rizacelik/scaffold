@@ -10,5 +10,8 @@
   ],
  "config": {
         "vendor-dir": "fuel/app/tasks"
-    }
+    },
+    
+  "minimum-stability": "dev",
+  "prefer-stable" : true
 }
