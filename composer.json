@@ -3,15 +3,13 @@
   "description": "Extend FuelPHP generators scaffold.",
   "keywords": ["FuelPHP", "generators", "scaffold"],
   "license": "MIT",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Riza Çelik",
       "email": "rizacelik@gmail.com"
     }
   ],
-"require": { "RizaCelik/scaffold" : "dev-master" },
-"minimum-stability": "dev",
  "config": {
         "vendor-dir": "fuel/app/tasks"
     }
