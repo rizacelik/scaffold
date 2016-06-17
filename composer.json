@@ -10,7 +10,8 @@
       "email": "rizacelik@gmail.com"
     }
   ],
-
+"require": { "RizaCelik/scaffold" : "dev-master" },
+"minimum-stability": "dev",
  "config": {
         "vendor-dir": "fuel/app/tasks"
     }
