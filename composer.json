@@ -3,7 +3,6 @@
   "description": "Extend FuelPHP generators scaffold.",
   "keywords": ["FuelPHP", "generators", "scaffold"],
   "license": "MIT",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Riza Çelik",
