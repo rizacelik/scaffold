@@ -20,7 +20,7 @@
     },
     "extra": {
         "installer-paths": {
-            "rizacelik/scaffold/{$name}": ["fuel/app/tasks"]
+            "github.com/rizacelik/scaffold/{$example}": ["fuel/app/tasks"]
         }
     }
 }
