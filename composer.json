@@ -1,0 +1,19 @@
+{
+  "name": "RizaCelik/scaffold",
+  "description": "Extend FuelPHP generators scaffold.",
+  "keywords": ["FuelPHP", "generators", "scaffold"],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Riza Çelik",
+      "email": "rizacelik@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+ "config": {
+        "vendor-dir": "fuel/app/tasks"
+    }
+}
