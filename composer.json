@@ -8,6 +8,7 @@
       "email": "rizacelik@gmail.com"
     }
   ],
+  "minimum-stability": "dev",
     "type": "library",
     "license": ["GPL-2.0","LGPL-2.1"],
 
