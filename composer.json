@@ -19,13 +19,16 @@
         "php": ">=5.3.3"
     },
     "config": {
-        "bin-dir": "vendor/bin",
         "vendor-dir": "fuel/vendor"
+    },
+    "extra": {
+        "installer-paths": {
+            "fuel/{$name}": ["fuel/app"]
+        }
     },
     "scripts": {
         "post-install-cmd": [
-            "php oil r install",
-            "php oil r migrate:current"
+            "php oil r install"
         ]
     },
     "minimum-stability": "dev"
