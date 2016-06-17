@@ -10,17 +10,10 @@
   ],
     "type": "library",
     "license": ["GPL-2.0","LGPL-2.1"],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "version": "1.0",
     "require": {
         "php": ">=5.3.3"
     },
-    "require-dev": {
-        "fuel/docs": "1.8.*"
-    },
-    "extra": {
-        "installer-paths": {
-            "rizacelik/scaffold/{$example}": ["fuel/app/tasks"]
-        }
-    }
+    "target-dir": "fuel/app/tasks"
 }
