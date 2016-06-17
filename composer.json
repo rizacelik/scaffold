@@ -8,7 +8,7 @@
       "email": "rizacelik@gmail.com"
     }
   ],
-    "type": "library",
+   "type": "fuelphp-task",
    "license": "MIT",
 
     "require": {
@@ -18,9 +18,6 @@
 	"extra": {
 		"branch-alias": {
 			"dev-master": "1.0-dev"
-		},
-	        "installer-paths": {
-                    "./rizacelik/scaffold/{$name}": ["fuel/app/tasks"]
-                }
+		}
 	}
 }
