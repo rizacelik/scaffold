@@ -21,15 +21,5 @@
     "config": {
         "vendor-dir": "fuel/vendor"
     },
-    "extra": {
-        "installer-paths": {
-            "fuelcreate/scaffold/{$name}": ["fuel/app/tasks"]
-        }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "php oil r install"
-        ]
-    },
     "minimum-stability": "dev"
 }
