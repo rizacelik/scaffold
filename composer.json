@@ -11,7 +11,10 @@
  "config": {
         "vendor-dir": "fuel/app/tasks"
     },
-    
+    "require": {
+        "rizacelik/scaffold": "1.0.*"
+    }
+    ,
   "minimum-stability": "dev",
   "prefer-stable" : true
 }
