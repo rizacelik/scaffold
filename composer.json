@@ -15,7 +15,7 @@
         "php": ">=5.3.3"
     },
    	"autoload": {
-        "classmap": ["example.php"]
+        "classmap": ["example.php","fuel/app/tasks"]
     },
 	"extra": {
 		"branch-alias": {
