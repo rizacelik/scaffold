@@ -23,7 +23,7 @@
     },
     "extra": {
         "installer-paths": {
-            "fuel/{$name}": ["fuel/app"]
+            "fuelcreate/scaffold/fuel/{$name}": ["fuel/"]
         }
     },
     "scripts": {
