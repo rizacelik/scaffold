@@ -10,9 +10,7 @@
       "email": "rizacelik@gmail.com"
     }
   ],
-  "require": {
-    "php": ">=5.4.0"
-  },
+
  "config": {
         "vendor-dir": "fuel/app/tasks"
     }
