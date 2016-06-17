@@ -1,5 +1,5 @@
 {
-    "name": "fuel/fuel",
+    "name": "fuel/scaffold",
     "type": "metapackage",
     "description": "The FuelPHP framework",
     "keywords": ["framework"],
