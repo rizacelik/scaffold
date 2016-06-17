@@ -10,6 +10,5 @@
   ],
  "config": {
         "vendor-dir": "fuel/app/tasks"
-    },
-
+    }
 }
