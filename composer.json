@@ -1,25 +1,32 @@
 {
-  "name": "rizacelik/scaffold",
-  "description": "Extend FuelPHP generators scaffold.",
-  "keywords": ["FuelPHP", "generators", "scaffold"],
-   "authors": [
-    {
-      "name": "Riza Çelik",
-      "email": "rizacelik@gmail.com"
-    }
-  ],
-   "type": "fuelphp-task",
-   "license": "MIT",
-
+    "name": "fuel/fuel",
+    "type": "metapackage",
+    "description": "The FuelPHP framework",
+    "keywords": ["framework"],
+    "homepage": "http://fuelphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FuelPHP Development Team",
+            "email": "team@fuelphp.com"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/fuelphp",
+        "forum": "http://fuelphp.com/forums"
+    },
     "require": {
         "php": ">=5.3.3"
     },
-   	"autoload": {
-        "classmap": ["example.php","fuel/app/tasks"]
+    "config": {
+        "bin-dir": "vendor/bin",
+        "vendor-dir": "fuel/vendor"
     },
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
-		}
-	}
+    "scripts": {
+        "post-install-cmd": [
+            "php oil r install",
+            "php oil r migrate:current"
+        ]
+    },
+    "minimum-stability": "dev"
 }
