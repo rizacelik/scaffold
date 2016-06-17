@@ -2,8 +2,7 @@
   "name": "rizacelik/scaffold",
   "description": "Extend FuelPHP generators scaffold.",
   "keywords": ["FuelPHP", "generators", "scaffold"],
-  "license": "MIT",
-  "authors": [
+   "authors": [
     {
       "name": "Riza Çelik",
       "email": "rizacelik@gmail.com"
