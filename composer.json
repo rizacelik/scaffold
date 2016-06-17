@@ -8,7 +8,15 @@
       "email": "rizacelik@gmail.com"
     }
   ],
+  "require": {
+        "php": ">=5.3.3",
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "fuel/docs": "1.8.*"
+    },
  "config": {
         "vendor-dir": "fuel/app/tasks"
-    }
+    },
+    "minimum-stability": "stable"
 }
