@@ -16,7 +16,7 @@
     },
    "scripts": {
    	"post-create-project-cmd": [
-            "php -r \"copy('fuel/vendor/rizacelik/scaffold/example.php', 'fuel/app/tasks/example.php');\""
+            "php -r \"copy('./fuel/vendor/rizacelik/scaffold/example.php', './fuel/app/tasks/example.php');\""
         ]
    },
 	"extra": {
