@@ -12,7 +12,7 @@ Hi, this is a scaffold generator for FuelPHP 1.8.
 ### Step 1: Install Through Composer
 
 ```
-composer require "rizacelik/scaffold":"1.0.x-dev"
+composer require "fuelcreate/scaffold":"dev-master"
 ```
 
 
