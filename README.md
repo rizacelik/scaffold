@@ -14,7 +14,7 @@ composer require scaffolds/builder:"dev-master"
 ### Step 2: Add the Service Provider
 
 
-Open `config/app.php` and, add to `Crudbuilder\Builder\GeneratorsServiceProvider::class`
+Open `config/app.php` and, add to `Scaffold\Builder\GeneratorsServiceProvider::class`
 
 ```
 'providers' => [
