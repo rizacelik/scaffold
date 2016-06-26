@@ -8,7 +8,7 @@ Laravel5* Scaffold All (Model, Controller, views) Generator
 ### Step 1: Install Through Composer
 
 ```
-composer require crudbuilder/scaffold: "dev-master"
+composer require scaffold/builder: "dev-master"
 ```
 
 ### Step 2: Add the Service Provider
