@@ -1,20 +1,19 @@
 {
-    "name": "fuelcreate/scaffold",
-    "description": "Extend FuelPHP generators scaffold.",
-  "keywords": ["FuelPHP", "generators", "scaffold"],
-   "authors": [
+  "name": "scaffold/builder",
+  "description": "Laravel 5* Scaffold Generator",
+  "keywords": ["generators", "laravel", "scaffold"],
+  "license": "MIT",
+  "authors": [
     {
-      "name": "Riza Çelik",
-      "email": "rizacelik@yahoo.com"
+      "name": "Rıza Çelik",
+      "email": "rizacelik@gmail.com"
     }
   ],
-   "type": "fuelphp-task",
-   "license": "MIT",
-
-    "require": {
-        "php": ">=5.3.3"
-    },
-    "version": "1.0.0",
-    "minimum-stability": "stable",
-    "prefer-stable": true
+  "autoload": {
+    "psr-4": {
+      "Scaffold\\Builder\\": "src/"
+    }
+  },
+  "version"  :  "1.0.0" , 
+  "minimum-stability" :  "dev"
 }
