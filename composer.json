@@ -1,5 +1,5 @@
 {
-  "name": "scaffold/builder",
+  "name": "scaffolds/builder",
   "description": "Laravel 5* Scaffold Generator",
   "keywords": ["generators", "laravel", "scaffold"],
   "license": "MIT",
