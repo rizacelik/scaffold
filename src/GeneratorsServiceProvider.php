@@ -11,6 +11,6 @@ class GeneratorsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands('Paketim\Paketismim\Scaffold');
+        $this->commands('Scaffold\Builder\Scaffold');
     }
 }
