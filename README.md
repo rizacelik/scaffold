@@ -67,7 +67,6 @@ C:\xampp\htdocs\laravel52>
 
 
 
-
 ## Scaffold
 ![image](http://i67.tinypic.com/2ujpcsz.jpg)
 ![image](http://i66.tinypic.com/w9b7g9.png)
