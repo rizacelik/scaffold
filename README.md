@@ -47,13 +47,13 @@ C:\xampp\htdocs\laravel52>php artisan make:scaffold
  > n
 ```
 
+```
 C:\xampp\htdocs\laravel52\resources\views/posts\create.blade.php
 C:\xampp\htdocs\laravel52\resources\views/posts\edit.blade.php
 C:\xampp\htdocs\laravel52\resources\views/posts\show.blade.php
 C:\xampp\htdocs\laravel52\resources\views/posts\index.blade.php
 C:\xampp\htdocs\laravel52\resources\views/posts\_form.blade.php
 C:\xampp\htdocs\laravel52\app\Http\Controllers\PostsController.php
-
 C:\xampp\htdocs\laravel52\app\Posts.php
 C:\xampp\htdocs\laravel52\resources\views/categories\create.blade.php
 C:\xampp\htdocs\laravel52\resources\views/categories\edit.blade.php
@@ -61,12 +61,11 @@ C:\xampp\htdocs\laravel52\resources\views/categories\show.blade.php
 C:\xampp\htdocs\laravel52\resources\views/categories\index.blade.php
 C:\xampp\htdocs\laravel52\resources\views/categories\_form.blade.php
 C:\xampp\htdocs\laravel52\app\Http\Controllers\CategoriesController.php
-
 C:\xampp\htdocs\laravel52\app\Categories.php
 C:\xampp\htdocs\laravel52\app\Comments.php
 
 C:\xampp\htdocs\laravel52>
-
+```
 
 
 
