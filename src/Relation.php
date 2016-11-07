@@ -25,7 +25,7 @@ trait Relation
             $table     = ucfirst(camel_case($row->TABLE_NAME));
             $ref_table = ucfirst(camel_case($row->REFERENCED_TABLE_NAME));
             
-            $code[str_replace('_', '', $row->TABLE_NAME)][$row->REFERENCED_TABLE_NAME] = $row->REFERENCED_TABLE_NAME;
+            //$code[str_replace('_', '', $row->TABLE_NAME)][$row->REFERENCED_TABLE_NAME] = $row->REFERENCED_TABLE_NAME;
             
             if (count($manycolumn[$row->TABLE_NAME]) < 2) {
                 array_unshift($manycolumn[$row->TABLE_NAME], 'id');
@@ -47,7 +47,7 @@ trait Relation
         
         $this->belongsto = $belongsto;
         $this->hasmany   = $hasmany;
-        return count($manycolumn) > 0 ? $manycolumn : $this->noRelate();
+        return $manycolumn;
     }
     
     public function noRelate()
