@@ -7,6 +7,7 @@ trait Relation
     
     public $belongsto = array();
     public $hasmany = array();
+    public $table_name = array();
     
     public function relate()
     {
@@ -24,6 +25,7 @@ trait Relation
             
             $table     = ucfirst(camel_case($row->TABLE_NAME));
             $ref_table = ucfirst(camel_case($row->REFERENCED_TABLE_NAME));
+	    $this->table_name[] = $row->TABLE_NAME;
             
             //$code[str_replace('_', '', $row->TABLE_NAME)][$row->REFERENCED_TABLE_NAME] = $row->REFERENCED_TABLE_NAME;
             
@@ -58,12 +60,9 @@ trait Relation
         $normal = array();
         
         foreach ($query as $row) {
-            //$file       = ucfirst(camel_case($row->TABLE_NAME));
-            //$controller = app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $file . 'Controller.php');
-            //$model      = app_path($file . '.php');
-            //if (!file_exists($controller) && !file_exists($model)) {
-                $normal[$row->TABLE_NAME] = $row->TABLE_NAME;
-            //}
+	   if (!in_array($row->TABLE_NAME, $this->table_name)){
+	        $normal[$row->TABLE_NAME] = $row->TABLE_NAME;
+	   }
         }
         return $normal;
     }
