@@ -43,7 +43,7 @@ class Scaffold extends Command
     {
 		 
         if (count($this->relate()) == 0) {
-            $this->info('Database not found tables. Please; before scaffolding, create table or tables.');
+            $this->info('Not found tables in Database. Please; before scaffolding, create table or tables.');
             return false;
         }
        
