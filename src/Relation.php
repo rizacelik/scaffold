@@ -58,9 +58,9 @@ trait Relation
         $normal = array();
         
         foreach ($query as $row) {
-            $file       = ucfirst(camel_case($row->TABLE_NAME));
-            $controller = app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $file . 'Controller.php');
-            $model      = app_path($file . '.php');
+            //$file       = ucfirst(camel_case($row->TABLE_NAME));
+            //$controller = app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $file . 'Controller.php');
+            //$model      = app_path($file . '.php');
             //if (!file_exists($controller) && !file_exists($model)) {
                 $normal[$row->TABLE_NAME] = $row->TABLE_NAME;
             //}
