@@ -8,7 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 class Scaffold extends Command
 {
     use Relation;
-	use CreateBuilder;
+    use CreateBuilder;
     /**
      * The console command name.
      *
@@ -49,7 +49,7 @@ class Scaffold extends Command
        
         if ($this->confirm('Generate all controller, model and views? [y|N]')) {
             $this->info(str_repeat("=", 50));
-			$backup = false;
+		$backup = false;
             if ($this->confirm('Notice: Are you backed up if exists files? [y|N]')) {
                 $backup = true;
             }
