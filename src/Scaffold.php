@@ -42,7 +42,7 @@ class Scaffold extends Command
     public function fire()
     {
 		 
-        if (count($this->relate()) == 0) {
+        if (count($this->relate()) == 0 || count($this->noRelate()) == 0) {
             $this->info('Not found tables in Database. Please; before scaffolding, create table or tables.');
             return false;
         }
@@ -60,7 +60,9 @@ class Scaffold extends Command
 		
         $this->_create($this->hasmany,'_has_many', $backup);
         $this->_create($this->belongsto, '_belongs_to', $backup, false);
-        $this->_create($this->noRelate(), false, $backup);
+ 	if(count($this->hasmany) == 0 || count($this->belongsto) == 0){
+             $this->_create($this->noRelate(), false, $backup);
+	}
         
     }
     
