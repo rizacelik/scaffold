@@ -60,9 +60,7 @@ class Scaffold extends Command
 		
         $this->_create($this->hasmany,'_has_many', $backup);
         $this->_create($this->belongsto, '_belongs_to', $backup, false);
- 	if(count($this->hasmany) == 0 || count($this->belongsto) == 0){
-             $this->_create($this->noRelate(), false, $backup);
-	}
+        $this->_create($this->noRelate(), false, $backup);
         
     }
     
