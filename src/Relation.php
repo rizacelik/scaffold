@@ -12,6 +12,8 @@ trait Relation
     {
         
         $manycolumn = array();
+	$belongsto  = array();
+	$hasmany    = array();
         
         $query = \DB::table('INFORMATION_SCHEMA.KEY_COLUMN_USAGE')->whereRaw('TABLE_SCHEMA = Database()')->whereRaw('REFERENCED_TABLE_NAME IS NOT NULL')->get();
         foreach ($query as $row) {
@@ -45,7 +47,7 @@ trait Relation
         
         $this->belongsto = $belongsto;
         $this->hasmany   = $hasmany;
-        return $manycolumn;
+        return count($manycolumn) > 0 ? $manycolumn : $this->noRelate();
     }
     
     public function noRelate()
@@ -59,9 +61,9 @@ trait Relation
             $file       = ucfirst(camel_case($row->TABLE_NAME));
             $controller = app_path('Http' . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . $file . 'Controller.php');
             $model      = app_path($file . '.php');
-            if (!file_exists($controller) && !file_exists($model)) {
+            //if (!file_exists($controller) && !file_exists($model)) {
                 $normal[$row->TABLE_NAME] = $row->TABLE_NAME;
-            }
+            //}
         }
         return $normal;
     }
