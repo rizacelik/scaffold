@@ -45,24 +45,46 @@ C:\xampp\htdocs\laravel53>php artisan make:scaffold
 
  Notice: Are you backed up if exists files? [y|N] (yes/no) [no]:
  > n
-```
 
-```
-C:\xampp\htdocs\laravel53\resources\views\blogposts\create.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogposts\edit.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogposts\show.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogposts\index.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogposts\_form.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogposts\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogposts\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogposts\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogposts\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogposts\_form.blade.php
 C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogPostsController.php
 C:\xampp\htdocs\laravel53\app\BlogPosts.php
-C:\xampp\htdocs\laravel53\resources\views\blogcategories\create.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogcategories\edit.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogcategories\show.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogcategories\index.blade.php
-C:\xampp\htdocs\laravel53\resources\views\blogcategories\_form.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\_form.blade.php
+C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogTagsController.php
+C:\xampp\htdocs\laravel53\app\BlogTags.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\_form.blade.php
 C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogCategoriesController.php
 C:\xampp\htdocs\laravel53\app\BlogCategories.php
-. . .
+C:\xampp\htdocs\laravel53\app\BlogComments.php
+C:\xampp\htdocs\laravel53\app\BlogPostTag.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcategories\_form.blade.php
+C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogCategoriesController.php
+C:\xampp\htdocs\laravel53\app\BlogCategories.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogtags\_form.blade.php
+C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogTagsController.php
+C:\xampp\htdocs\laravel53\app\BlogTags.php
+
+C:\xampp\htdocs\laravel53>
 ```
 
 
