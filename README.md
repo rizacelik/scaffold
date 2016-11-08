@@ -36,7 +36,7 @@ php artisan make:scaffold
 
 
 ```
-C:\xampp\htdocs\laravel52>php artisan make:scaffold
+C:\xampp\htdocs\laravel53>php artisan make:scaffold
 
  Generate all controller, model and views? [y|N] (yes/no) [no]:
  > y
