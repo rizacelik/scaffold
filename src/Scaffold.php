@@ -41,15 +41,18 @@ class Scaffold extends Command
      */
     public function fire()
     {
-		 
-        if (count($this->relate()) == 0 && count($this->noRelate()) == 0) {
+        
+        $relate   = $this->relate();
+        $noRelate = $this->noRelate();
+        
+        if (count($relate) == 0 && count($noRelate) == 0) {
             $this->info('Not found tables in Database. Please; before scaffolding, create table or tables.');
             return false;
         }
-       
+        
         if ($this->confirm('Generate all controller, model and views? [y|N]')) {
             $this->info(str_repeat("=", 50));
-		$backup = false;
+            $backup = false;
             if ($this->confirm('Notice: Are you backed up if exists files? [y|N]')) {
                 $backup = true;
             }
@@ -57,12 +60,10 @@ class Scaffold extends Command
             echo 'End create scaffold.' . PHP_EOL;
             return false;
         }
-		
-        $this->_create($this->hasmany,'_has_many', $backup);
-        $this->_create($this->belongsto, '_belongs_to', $backup, false);
-        $this->_create($this->noRelate(), false, $backup);
+        
+        $this->_create($relate, true, $backup);
+        $this->_create($noRelate, false, $backup);
         
     }
     
- 
 }
