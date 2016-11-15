@@ -111,15 +111,16 @@ class BlogPosts extends Model {
 	
 	protected $fillable = ['category_id', 'title', 'summary', 'content', 'slug', 'status', 'comments'];
 
-    public function BlogCategories() {
-		return $this->belongsToMany('App\BlogCategories', 'blog_posts', 'id', 'category_id');
-    }
-    public function BlogComments() {
-		return $this->hasMany('App\BlogComments', 'post_id', 'id');
+    public function BlogTags() {
+		return $this->belongsToMany('App\BlogTags', 'blog_post_tag', 'post_id', 'tag_id');
     }
 
-    public function BlogPostTag() {
-		return $this->hasMany('App\BlogPostTag', 'post_id', 'id');
+    public function BlogCategories() {
+		return $this->belongsTo('App\BlogCategories', 'category_id', 'id');
+    }
+
+    public function BlogComments() {
+		return $this->hasMany('App\BlogComments', 'post_id', 'id');
     }
 }
 ```
