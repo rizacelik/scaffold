@@ -77,24 +77,8 @@ trait CreateBuilder
                 $imp = '';
             } else {
                 $imp = PHP_EOL;
-                
-                if (isset($this->hasmany[$key]) && $relate == '_belongs_to') {
-                    continue;
-                }
-                
-                if (isset($this->belongsto[$key]) && $relate == '_has_many') {
-                    
-                    foreach ($this->belongsto[$key] as $keyss) {
-                        
-                        $imp .= $keyss[0] . PHP_EOL;
-                        
-                    }
-                }
-                
-                foreach ($table as $keyss) {
-                    
-                    $imp .= $keyss[0] . PHP_EOL;
-                    
+                foreach ($table as $values) {                    
+                    $imp .= $values[0] . PHP_EOL;                   
                 }
                 $imp = rtrim($imp, PHP_EOL);
             }
