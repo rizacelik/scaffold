@@ -74,7 +74,7 @@ trait Relation
         $normal = array();
         
         foreach ($query as $row) {
-            if (!in_array($row->TABLE_NAME, $this->table_name)) {
+            if (!in_array($row->TABLE_NAME, $this->table_name) && 'migrations' != $row->TABLE_NAME) {
                 $normal[$row->TABLE_NAME] = $row->TABLE_NAME;
             }
         }
