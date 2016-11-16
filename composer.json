@@ -1,7 +1,7 @@
 {
   "name": "scaffolds/builder",
   "description": "Laravel 5* Scaffold Generator",
-  "keywords": ["laravel", "framework", "generator", "build", "builder","laravel builder","laravel relationship", "scaffod", "CRUD", "crud generator", "crud generators", "scaffolds", "Scaffolding", "Scaffold", "laravel bootstrap", "laravel materialize", "Laravel 5.2", "Laravel 5.3", "rizacelik", "Rıza Çelik", "riza celik", "fast crud generator", "model generator","controller generator","view generator","model controller generator","relationship","relation"],
+  "keywords": ["laravel", "framework", "generator", "scaffolds builder", "scaffold builder", "build", "builder","laravel builder","laravel relationship", "scaffod", "CRUD", "crud generator", "crud generators", "scaffolds", "Scaffolding", "Scaffold", "laravel bootstrap", "laravel materialize", "Laravel 5.2", "Laravel 5.3", "rizacelik", "Rıza Çelik", "riza celik", "fast crud generator", "model generator","controller generator","view generator","model controller generator","relationship","relation"],
   "license": "MIT",
   "authors": [
     {
