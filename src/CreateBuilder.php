@@ -117,13 +117,13 @@ trait CreateBuilder
     protected function makeFile($model, $file, $content, $backup = false)
     {
         if ($model == 'views') {
-            $file = base_path('resources' . $this->ds . 'views/' . $file . '.blade.php');
+            $file = base_path('resources' . $this->ds . 'views' . $this->ds . $file . '.blade.php');
         } elseif ($model == 'controller') {
             $file = app_path('Http' . $this->ds . 'Controllers' . $this->ds . $file . 'Controller.php');
         } elseif ($model == 'model') {
             $file = app_path($file . '.php');
         } elseif ($model == 'layouts') {
-            $file = base_path('resources' . $this->ds . 'views/' . $file . '.blade.php');
+            $file = base_path('resources' . $this->ds . 'views' . $this->ds . $file . '.blade.php');
             if (file_exists($file)) {
                 return false;
             }
