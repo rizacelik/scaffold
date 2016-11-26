@@ -36,6 +36,7 @@ php artisan make:scaffold
 
 
 ```
+
 C:\xampp\htdocs\laravel53>php artisan make:scaffold
 
  Generate all controller, model and views? [y|N] (yes/no) [no]:
@@ -46,6 +47,13 @@ C:\xampp\htdocs\laravel53>php artisan make:scaffold
  Notice: Are you backed up if exists files? [y|N] (yes/no) [no]:
  > n
 
+C:\xampp\htdocs\laravel53\resources\views/blogcomments\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcomments\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcomments\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcomments\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/blogcomments\_form.blade.php
+C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogCommentsController.php
+C:\xampp\htdocs\laravel53\app\BlogComments.php
 C:\xampp\htdocs\laravel53\resources\views/blogposts\create.blade.php
 C:\xampp\htdocs\laravel53\resources\views/blogposts\edit.blade.php
 C:\xampp\htdocs\laravel53\resources\views/blogposts\show.blade.php
@@ -67,22 +75,24 @@ C:\xampp\htdocs\laravel53\resources\views/blogcategories\index.blade.php
 C:\xampp\htdocs\laravel53\resources\views/blogcategories\_form.blade.php
 C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogCategoriesController.php
 C:\xampp\htdocs\laravel53\app\BlogCategories.php
-C:\xampp\htdocs\laravel53\app\BlogComments.php
-C:\xampp\htdocs\laravel53\app\BlogPostTag.php
-C:\xampp\htdocs\laravel53\resources\views/blogcategories\create.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogcategories\edit.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogcategories\show.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogcategories\index.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogcategories\_form.blade.php
-C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogCategoriesController.php
-C:\xampp\htdocs\laravel53\app\BlogCategories.php
-C:\xampp\htdocs\laravel53\resources\views/blogtags\create.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogtags\edit.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogtags\show.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogtags\index.blade.php
-C:\xampp\htdocs\laravel53\resources\views/blogtags\_form.blade.php
-C:\xampp\htdocs\laravel53\app\Http\Controllers\BlogTagsController.php
-C:\xampp\htdocs\laravel53\app\BlogTags.php
+C:\xampp\htdocs\laravel53\resources\views/users\create.blade.php
+C:\xampp\htdocs\laravel53\resources\views/users\edit.blade.php
+C:\xampp\htdocs\laravel53\resources\views/users\show.blade.php
+C:\xampp\htdocs\laravel53\resources\views/users\index.blade.php
+C:\xampp\htdocs\laravel53\resources\views/users\_form.blade.php
+C:\xampp\htdocs\laravel53\app\Http\Controllers\UsersController.php
+C:\xampp\htdocs\laravel53\app\Users.php
+
+
+---------------------------------------------------------------------------
+
+| Route file created: C:\xampp\htdocs\laravel53\routes\scaffold_routes.php
+| Please open C:\xampp\htdocs\laravel53\routes\web.php routes file
+| add require('scaffold_routes.php');
+| and run http://localhost/laravel53/public/yourRoute
+
+---------------------------------------------------------------------------
+
 
 C:\xampp\htdocs\laravel53>
 ```
