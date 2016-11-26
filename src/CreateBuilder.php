@@ -7,6 +7,7 @@ trait CreateBuilder
     
     protected $ds = DIRECTORY_SEPARATOR;
     protected $variable = array();
+	protected $route_content = '';
     
     public function _create($relation, $relate, $backup, $has = true)
     {
@@ -108,6 +109,7 @@ trait CreateBuilder
                 $this->classParse('controller', $app_name, 'controller', $backup);
             }
             $this->classParse('model', $app_name, 'model', $backup);
+            $this->route_content .= $this->route();
             $i++;
         }
     }
@@ -159,6 +161,44 @@ trait CreateBuilder
         extract($this->variable);
         $content = include(__DIR__ . $this->ds . 'stencil' . $this->ds . $file . '.php');
         $this->makeFile($name, $app, $content, $backup);
+    }
+    
+    protected function route()
+    {
+        extract($this->variable);
+        $content = include(__DIR__ . $this->ds . 'stencil' . $this->ds . 'routes.php');
+        return $content;
+    }
+    
+    protected function routeParse($content)
+    {
+        $path = base_path('routes' . $this->ds . 'web.php');
+        
+        if (file_exists($path)) {
+            $add = base_path('routes' . $this->ds . 'scaffold_routes.php');
+        } else {
+            $path = app_path('routes.php');
+            $add  = app_path('scaffold_routes.php');
+        }
+        
+        file_put_contents($add, $content);
+        
+        $app_path = explode($this->ds, base_path());
+        $app_path = array_pop($app_path);
+        
+        echo PHP_EOL . PHP_EOL . str_repeat('-----', 15) . PHP_EOL . PHP_EOL;
+        echo "| Route file created: $add " . PHP_EOL;
+        echo "| Please open $path routes file" . PHP_EOL;
+        echo "| add require('scaffold_routes.php');" . PHP_EOL;
+        echo "| and run http://localhost/$app_path/public/yourRoute";
+        echo PHP_EOL . PHP_EOL . str_repeat('-----', 15) . PHP_EOL . PHP_EOL;
+    }
+    
+    public function __destruct()
+    {
+        if (!empty($this->route_content)) {
+            $this->routeParse('<?php' . $this->route_content);
+        }
     }
     
 }
