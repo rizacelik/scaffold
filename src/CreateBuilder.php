@@ -7,7 +7,8 @@ trait CreateBuilder
     
     protected $ds = DIRECTORY_SEPARATOR;
     protected $variable = array();
-	protected $route_content = '';
+    protected $route_content = '';
+    public $crud_code = '';
     
     public function _create($relation, $relate, $backup, $has = true)
     {
@@ -182,6 +183,12 @@ trait CreateBuilder
         }
         
         file_put_contents($add, $content);
+	$crud = base_path('resources' . $this->ds . 'crud_code_help.txt');
+		$mess ='';
+		if(!empty($this->crud_code)){
+		   file_put_contents($crud, $this->crud_code);
+		   $mess = "| Created crud help code. Please open: $crud";
+		}
         
         $app_path = explode($this->ds, base_path());
         $app_path = array_pop($app_path);
@@ -190,7 +197,8 @@ trait CreateBuilder
         echo "| Route file created: $add " . PHP_EOL;
         echo "| Please open $path routes file" . PHP_EOL;
         echo "| add require('scaffold_routes.php');" . PHP_EOL;
-        echo "| and run http://localhost/$app_path/public/yourRoute";
+        echo "| and run http://localhost/$app_path/public/yourRoute" . PHP_EOL;
+        echo $mess;
         echo PHP_EOL . PHP_EOL . str_repeat('-----', 15) . PHP_EOL . PHP_EOL;
     }
     
