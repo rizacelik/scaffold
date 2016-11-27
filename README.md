@@ -90,6 +90,7 @@ C:\xampp\htdocs\laravel53\app\Users.php
 | Please open C:\xampp\htdocs\laravel53\routes\web.php routes file
 | add require('scaffold_routes.php');
 | and run http://localhost/laravel53/public/yourRoute
+| Created crud help code. Please open: C:\xampp\htdocs\laravel53\resources\crud_code_help.txt
 
 ---------------------------------------------------------------------------
 
