@@ -98,25 +98,37 @@ trait Relation
         return $merged;
     }
 	
-    public function crud($table, $relate_table, $many = false)
-    {
-        $query = \DB::table('INFORMATION_SCHEMA.COLUMNS')->whereRaw('TABLE_SCHEMA = Database()')->where('TABLE_NAME', $table)->get();
-        $merged = array();
-	$required = array();
-        foreach ($query as $info) {
-            $columnName = $info->COLUMN_NAME;
-            if ($info->COLUMN_KEY != 'PRI' && $info->COLUMN_KEY != 'MUL' && $columnName != 'created_at' && $columnName != 'updated_at') {
-			   if ($info->IS_NULLABLE == 'NO' && is_null($info->COLUMN_DEFAULT)) {
-			      $type = $info->DATA_TYPE == 'int' || $info->DATA_TYPE == 'tinyint' || $info->DATA_TYPE == 'smallint' ? '|numeric' : '';
-				  $max = !is_null($info->CHARACTER_MAXIMUM_LENGTH) ? '|max:'.$info->CHARACTER_MAXIMUM_LENGTH : '';
-				  $uni = $info->COLUMN_KEY == 'UNI' ? '|unique:'.$table : '';
-			      $required[] = "'$columnName' => 'required$uni$type$max',";
-			      $t_name  = ucfirst(camel_case($table));
-			      $merged[$relate_table][$t_name][] = $columnName;
-			   }
+	public function crud($table, $relate_table, $many = false)
+	{
+		$query    = \DB::table('INFORMATION_SCHEMA.COLUMNS')->whereRaw('TABLE_SCHEMA = Database()')->where('TABLE_NAME', $table)->get();
+		$merged   = array();
+		$required = array();
+		foreach ($query as $info) {
+			$columnName = $info->COLUMN_NAME;
+			if ($info->COLUMN_KEY != 'PRI' && $columnName != 'created_at' && $columnName != 'updated_at') {
+				if ($info->IS_NULLABLE == 'NO' && is_null($info->COLUMN_DEFAULT)) {
+					if ($info->COLUMN_KEY == 'MUL' && $many) {
+						$columnName = $info->COLUMN_NAME;
+						$type       = $info->DATA_TYPE == 'int' || $info->DATA_TYPE == 'tinyint' || $info->DATA_TYPE == 'smallint' ? '|numeric' : '';
+						$max        = !is_null($info->CHARACTER_MAXIMUM_LENGTH) ? '|max:' . $info->CHARACTER_MAXIMUM_LENGTH : '';
+						$uni        = $info->COLUMN_KEY == 'UNI' ? '|unique:' . $table : '';
+						$required[] = "'$columnName' => 'required$uni$type$max',";
+						$t_name     = ucfirst(camel_case($table));
+						$merged[$relate_table][$t_name][] = $columnName;
+					} elseif ($info->COLUMN_KEY != 'MUL') {
+						$columnName = $info->COLUMN_NAME;
+						$type       = $info->DATA_TYPE == 'int' || $info->DATA_TYPE == 'tinyint' || $info->DATA_TYPE == 'smallint' ? '|numeric' : '';
+						$max        = !is_null($info->CHARACTER_MAXIMUM_LENGTH) ? '|max:' . $info->CHARACTER_MAXIMUM_LENGTH : '';
+						$uni        = $info->COLUMN_KEY == 'UNI' ? '|unique:' . $table : '';
+						$required[] = "'$columnName' => 'required$uni$type$max',";
+						$t_name     = ucfirst(camel_case($table));
+						$merged[$relate_table][$t_name][] = $columnName;
+					}
+					
+				}
 			}
 		}
 		
-        $this->template .= include(__DIR__ . DIRECTORY_SEPARATOR . 'stencil' . DIRECTORY_SEPARATOR . 'crud_code_help.php');
-    }
+		$this->template .= include(__DIR__ . DIRECTORY_SEPARATOR . 'stencil' . DIRECTORY_SEPARATOR . 'crud_code_help.php');
+	}
 }
