@@ -359,6 +359,7 @@ Relation: attach method
 public function store(Request $request){
 
 $this->validate($request, [
+	'category_id' => 'required|numeric',
 	'title' => 'required|max:255',
 	'summary' => 'required|max:65535',
 	'content' => 'required|max:65535',
@@ -369,11 +370,12 @@ $this->validate($request, [
 $BlogTags = BlogTags::find($request->input('id'));
 
 $BlogPosts = new BlogPosts();
-$BlogPosts->title    = $request->input('title');
-$BlogPosts->summary  = $request->input('summary');
-$BlogPosts->content  = $request->input('content');
-$BlogPosts->slug     = $request->input('slug');
-$BlogPosts->comments = $request->input('comments');
+$BlogPosts->category_id = $request->input('category_id');
+$BlogPosts->title       = $request->input('title');
+$BlogPosts->summary     = $request->input('summary');
+$BlogPosts->content     = $request->input('content');
+$BlogPosts->slug        = $request->input('slug');
+$BlogPosts->comments    = $request->input('comments');
 $BlogPosts->save();
 $BlogTags->BlogPosts()->attach($BlogPosts->id);
 
