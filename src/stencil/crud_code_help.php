@@ -28,7 +28,7 @@ foreach ($merged as $parent => $value) {
 }	
  $template .= "return redirect()->route('".strtolower($child).".index')->with('message', 'Item created successfully.');". PHP_EOL;
  $template .= '}'. PHP_EOL . PHP_EOL;
-}
+}else{
 
 $template .= str_repeat('-----',15) . PHP_EOL;
 $template .= 'Relation: create method'. PHP_EOL;
@@ -86,4 +86,5 @@ $template .= "    foreach(\$relate->{$child} as \$data){" . PHP_EOL;
 $template .= "       echo \$data->{$column};" . PHP_EOL;
 $template .= "    }" . PHP_EOL;
 $template .= "}" . PHP_EOL . PHP_EOL;
+}
 return $template;
