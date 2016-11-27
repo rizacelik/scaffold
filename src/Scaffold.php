@@ -61,6 +61,7 @@ class Scaffold extends Command
             return false;
         }
         
+        $this->crud_code = $this->template;
         $this->_create($relate, true, $backup);
         $this->_create($noRelate, false, $backup);
         
