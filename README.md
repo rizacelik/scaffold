@@ -290,7 +290,322 @@ class BlogPostsController extends Controller {
 
 ```
 
-## Example SQL Table
+## Example crud_code_help.txt
+```php
+---------------------------------------------------------------------------
+Relation: create method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'commentext' => 'required|max:255',
+	'ip' => 'required|max:15',
+]);
+
+$BlogPosts = BlogPosts::find($request->input('id'));
+$BlogComments = $BlogPosts->BlogComments()->create([
+	'commentext' => $request->input('commentext'),
+	'ip'         => $request->input('ip'),
+]);
+
+return redirect()->route('blogposts.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: associate method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'commentext' => 'required|max:255',
+	'ip' => 'required|max:15',
+]);
+
+$BlogPosts = BlogPosts::find($request->input('id'));
+
+$BlogComments = new BlogComments();
+$BlogComments->commentext = $request->input('commentext');
+$BlogComments->ip         = $request->input('ip');
+
+$BlogComments->BlogPosts()->associate($BlogPosts);
+$BlogComments->save();
+
+return redirect()->route('blogposts.index')->with('message', 'Item created successfully.');
+}
+
+// ------  Read one data ------ 
+$BlogPosts = BlogPosts::find(1);
+echo $BlogPosts->id;
+foreach ($BlogPosts->BlogComments as $data) {
+   echo $data->ip;
+}
+
+//------- Read all data -------- 
+$BlogPosts = BlogPosts::all();
+foreach ($BlogPosts as $relate) {
+    echo $relate->id;
+    foreach($relate->BlogComments as $data){
+       echo $data->ip;
+    }
+}
+
+---------------------------------------------------------------------------
+Relation: attach method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'title' => 'required|max:255',
+	'summary' => 'required|max:65535',
+	'content' => 'required|max:65535',
+	'slug' => 'required|unique:blog_posts|max:255',
+	'comments' => 'required|numeric',
+]);
+
+$BlogTags = BlogTags::find($request->input('id'));
+
+$BlogPosts = new BlogPosts();
+$BlogPosts->title    = $request->input('title');
+$BlogPosts->summary  = $request->input('summary');
+$BlogPosts->content  = $request->input('content');
+$BlogPosts->slug     = $request->input('slug');
+$BlogPosts->comments = $request->input('comments');
+$BlogPosts->save();
+$BlogTags->BlogPosts()->attach($BlogPosts->id);
+
+return redirect()->route('blogposts.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: create method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'title' => 'required|max:255',
+	'summary' => 'required|max:65535',
+	'content' => 'required|max:65535',
+	'slug' => 'required|unique:blog_posts|max:255',
+	'comments' => 'required|numeric',
+]);
+
+$BlogTags = BlogTags::find($request->input('id'));
+$BlogPosts = $BlogTags->BlogPosts()->create([
+	'title'    => $request->input('title'),
+	'summary'  => $request->input('summary'),
+	'content'  => $request->input('content'),
+	'slug'     => $request->input('slug'),
+	'comments' => $request->input('comments'),
+]);
+
+return redirect()->route('blogtags.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: associate method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'title' => 'required|max:255',
+	'summary' => 'required|max:65535',
+	'content' => 'required|max:65535',
+	'slug' => 'required|unique:blog_posts|max:255',
+	'comments' => 'required|numeric',
+]);
+
+$BlogTags = BlogTags::find($request->input('id'));
+
+$BlogPosts = new BlogPosts();
+$BlogPosts->title    = $request->input('title');
+$BlogPosts->summary  = $request->input('summary');
+$BlogPosts->content  = $request->input('content');
+$BlogPosts->slug     = $request->input('slug');
+$BlogPosts->comments = $request->input('comments');
+
+$BlogPosts->BlogTags()->associate($BlogTags);
+$BlogPosts->save();
+
+return redirect()->route('blogtags.index')->with('message', 'Item created successfully.');
+}
+
+// ------  Read one data ------ 
+$BlogTags = BlogTags::find(1);
+echo $BlogTags->id;
+foreach ($BlogTags->BlogPosts as $data) {
+   echo $data->comments;
+}
+
+//------- Read all data -------- 
+$BlogTags = BlogTags::all();
+foreach ($BlogTags as $relate) {
+    echo $relate->id;
+    foreach($relate->BlogPosts as $data){
+       echo $data->comments;
+    }
+}
+
+---------------------------------------------------------------------------
+Relation: attach method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'name' => 'required|max:255',
+	'slug' => 'required|unique:blog_tags|max:255',
+]);
+
+$BlogPosts = BlogPosts::find($request->input('id'));
+
+$BlogTags = new BlogTags();
+$BlogTags->name = $request->input('name');
+$BlogTags->slug = $request->input('slug');
+$BlogTags->save();
+$BlogPosts->BlogTags()->attach($BlogTags->id);
+
+return redirect()->route('blogtags.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: create method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'name' => 'required|max:255',
+	'slug' => 'required|unique:blog_tags|max:255',
+]);
+
+$BlogPosts = BlogPosts::find($request->input('id'));
+$BlogTags = $BlogPosts->BlogTags()->create([
+	'name' => $request->input('name'),
+	'slug' => $request->input('slug'),
+]);
+
+return redirect()->route('blogposts.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: associate method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'name' => 'required|max:255',
+	'slug' => 'required|unique:blog_tags|max:255',
+]);
+
+$BlogPosts = BlogPosts::find($request->input('id'));
+
+$BlogTags = new BlogTags();
+$BlogTags->name = $request->input('name');
+$BlogTags->slug = $request->input('slug');
+
+$BlogTags->BlogPosts()->associate($BlogPosts);
+$BlogTags->save();
+
+return redirect()->route('blogposts.index')->with('message', 'Item created successfully.');
+}
+
+// ------  Read one data ------ 
+$BlogPosts = BlogPosts::find(1);
+echo $BlogPosts->id;
+foreach ($BlogPosts->BlogTags as $data) {
+   echo $data->slug;
+}
+
+//------- Read all data -------- 
+$BlogPosts = BlogPosts::all();
+foreach ($BlogPosts as $relate) {
+    echo $relate->id;
+    foreach($relate->BlogTags as $data){
+       echo $data->slug;
+    }
+}
+
+---------------------------------------------------------------------------
+Relation: create method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'title' => 'required|max:255',
+	'summary' => 'required|max:65535',
+	'content' => 'required|max:65535',
+	'slug' => 'required|unique:blog_posts|max:255',
+	'comments' => 'required|numeric',
+]);
+
+$BlogCategories = BlogCategories::find($request->input('id'));
+$BlogPosts = $BlogCategories->BlogPosts()->create([
+	'title'    => $request->input('title'),
+	'summary'  => $request->input('summary'),
+	'content'  => $request->input('content'),
+	'slug'     => $request->input('slug'),
+	'comments' => $request->input('comments'),
+]);
+
+return redirect()->route('blogcategories.index')->with('message', 'Item created successfully.');
+}
+
+---------------------------------------------------------------------------
+Relation: associate method
+---------------------------------------------------------------------------
+
+public function store(Request $request){
+
+$this->validate($request, [
+	'title' => 'required|max:255',
+	'summary' => 'required|max:65535',
+	'content' => 'required|max:65535',
+	'slug' => 'required|unique:blog_posts|max:255',
+	'comments' => 'required|numeric',
+]);
+
+$BlogCategories = BlogCategories::find($request->input('id'));
+
+$BlogPosts = new BlogPosts();
+$BlogPosts->title    = $request->input('title');
+$BlogPosts->summary  = $request->input('summary');
+$BlogPosts->content  = $request->input('content');
+$BlogPosts->slug     = $request->input('slug');
+$BlogPosts->comments = $request->input('comments');
+
+$BlogPosts->BlogCategories()->associate($BlogCategories);
+$BlogPosts->save();
+
+return redirect()->route('blogcategories.index')->with('message', 'Item created successfully.');
+}
+
+// ------  Read one data ------ 
+$BlogCategories = BlogCategories::find(1);
+echo $BlogCategories->id;
+foreach ($BlogCategories->BlogPosts as $data) {
+   echo $data->comments;
+}
+
+//------- Read all data -------- 
+$BlogCategories = BlogCategories::all();
+foreach ($BlogCategories as $relate) {
+    echo $relate->id;
+    foreach($relate->BlogPosts as $data){
+       echo $data->comments;
+    }
+}
+
+
+```
+
+## The sql tables in my database
 
 ```sql
 --
