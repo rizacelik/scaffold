@@ -39,7 +39,7 @@ class Scaffold extends Command
      *
      * @return mixed
      */
-    public function fire()
+    public function handle()
     {
         
         $relate   = $this->relate();
