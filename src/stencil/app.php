@@ -1,4 +1,4 @@
-<?php 
+<?php
 return <<<'LAYOUT'
 <!DOCTYPE html>
 <html lang="en">
@@ -82,5 +82,5 @@ return <<<'LAYOUT'
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
+
 LAYOUT;
-?>
