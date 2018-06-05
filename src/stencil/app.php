@@ -1,4 +1,4 @@
-<?php 
+<?php
 return <<<'LAYOUT'
 <!DOCTYPE html>
 <html lang="en">
@@ -83,4 +83,3 @@ return <<<'LAYOUT'
 </body>
 </html>
 LAYOUT;
-?>

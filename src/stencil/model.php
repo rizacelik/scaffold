@@ -14,4 +14,3 @@ class $app_name extends Model {
 $imp
 }
 ";
-?>

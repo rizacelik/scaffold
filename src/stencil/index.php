@@ -14,41 +14,41 @@ $content = <<<EOT
 <?php if (isset(\$$app_var)): ?>
 
 <table class="table table-striped">
-	<thead>
-		<tr>
+    <thead>
+        <tr>
 
 EOT;
 
 foreach ($fields as $field):
-	$content .= "\t\t\t" . '<th>' . ucwords(str_replace('_', ' ', $field)) . '</th>' . PHP_EOL;
+    $content .= "            " . '<th>' . ucwords(str_replace('_', ' ', $field)) . '</th>' . PHP_EOL;
 endforeach;
 
-$content .= '			<th width="20%">&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
+$content .= '           <th width="20%">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php foreach ($' . $app_var . ' as $item): ?>
-		<tr>
+        <tr>
 ';
 
 foreach ($fields as $field):
-	$content .= "\t\t\t" . '<td><?= $item->' . $field . ' ?></td>' . PHP_EOL;
+    $content .= "            " . '<td><?= $item->' . $field . ' ?></td>' . PHP_EOL;
 endforeach;
 
 $content .= <<<EOT
-			<td>
-				<div class="btn-toolbar">
-					<div class="btn-group">
-						<a href="<?=url('$app_var/show/'.\$item->{$id})?>" class = "btn btn-info btn-sm"><i class="glyphicon glyphicon-eye-open"></i> View</a>
-						<a href="<?=url('$app_var/edit/'.\$item->{$id})?>" class = "btn btn-warning btn-sm"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-						<a href="<?=url('$app_var/delete/'.\$item->{$id})?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
-					</div>
-				</div>
+            <td>
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <a href="<?=url('$app_var/show/'.\$item->{$id})?>" class = "btn btn-info btn-sm"><i class="glyphicon glyphicon-eye-open"></i> View</a>
+                        <a href="<?=url('$app_var/edit/'.\$item->{$id})?>" class = "btn btn-warning btn-sm"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                        <a href="<?=url('$app_var/delete/'.\$item->{$id})?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                    </div>
+                </div>
 
-			</td>
-		</tr>
+            </td>
+        </tr>
 <?php endforeach; ?>
-	</tbody>
+    </tbody>
 </table>
 
 <?php else: ?>
@@ -61,4 +61,3 @@ $content .= <<<EOT
 @endsection
 EOT;
 return $content;
-?>

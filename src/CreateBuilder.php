@@ -26,7 +26,7 @@ trait CreateBuilder
                 $columnName = $info->COLUMN_NAME;
                 if ($info->COLUMN_KEY != 'PRI' && $columnName != 'created_at' && $columnName != 'updated_at') {
                     $rule = array();
-                    $forms .= "\t\t<div class=\"form-group\"><label class=\"control-label\">" . ucwords(str_replace('_', ' ', $columnName)) . "</label>" . PHP_EOL;
+                    $forms .= "<div class=\"form-group\"><label class=\"control-label\">" . ucwords(str_replace('_', ' ', $columnName)) . "</label>" . PHP_EOL;
                     
                     $required = '';
                     $class    = 'class="col-md-4 form-control"';
@@ -39,23 +39,23 @@ trait CreateBuilder
                     if (in_array($info->DATA_TYPE, array('varchar', 'string', 'char'))) {
                         if ($columnName == 'email' || $columnName == 'mail') {
                             $rule[] = 'email';
-                            $forms .= "\t\t<input type=\"email\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
+                            $forms .= "<input type=\"email\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
                         } else {
-                            $forms .= "\t\t<input type=\"text\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
+                            $forms .= "<input type=\"text\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
                         }
                         $rule[] = !is_null($info->CHARACTER_MAXIMUM_LENGTH) ? "max:{$info->CHARACTER_MAXIMUM_LENGTH}" : 'max:255';
                     } elseif (in_array($info->DATA_TYPE, array('int', 'integer', 'tinyint'))) {
                         $rule[] = 'numeric';
-                        $forms .= "\t\t<input type=\"number\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
+                        $forms .= "<input type=\"number\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
                         
                     } elseif (in_array($info->DATA_TYPE, array('datetime', 'date', 'timestamp'))) {
                         $rule[] = 'date';
-                        $forms .= "\t\t<input type=\"datetime\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
+                        $forms .= "<input type=\"datetime\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
                         
                     } elseif ($info->DATA_TYPE == 'text') {
-                        $forms .= "\t\t<textarea name=\"{$columnName}\" rows=10 cols=45 $class $required><?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : '' ?></textarea></div>" . PHP_EOL;
+                        $forms .= "<textarea name=\"{$columnName}\" rows=10 cols=45 $class $required><?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : '' ?></textarea></div>" . PHP_EOL;
                     } else {
-                        $forms .= "\t\t<input type=\"datetime\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
+                        $forms .= "<input type=\"datetime\" name=\"{$columnName}\" value =\"<?= isset(\${$app_var}) ? \${$app_var}->{$columnName} : ''?>\" $required $class $place></div>" . PHP_EOL;
                     }
                     
                     if (count($rule) > 0) {
@@ -183,7 +183,7 @@ trait CreateBuilder
         }
         
         file_put_contents($add, $content);
-	$crud = base_path('resources' . $this->ds . 'crud_code_help.txt');
+        $crud = base_path('resources' . $this->ds . 'crud_code_help.txt');
 		$mess ='';
 		if(!empty($this->crud_code)){
 		   file_put_contents($crud, $this->crud_code);

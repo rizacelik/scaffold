@@ -12,4 +12,3 @@ return <<<EOT
 </div>
 @endsection
 EOT;
-?>

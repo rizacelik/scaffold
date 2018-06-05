@@ -4,7 +4,6 @@ namespace Scaffold\Builder;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-
 class Scaffold extends Command
 {
     use Relation;
@@ -15,7 +14,7 @@ class Scaffold extends Command
      * @var string
      */
     protected $name = 'make:scaffold';
-    
+
     /**
      * The console command description.
      *
@@ -23,7 +22,7 @@ class Scaffold extends Command
      */
 
     protected $description = 'Make scaffold all Model, Controller, Views.';
-    
+
     /**
      * Create a new command instance.
      *
@@ -33,7 +32,7 @@ class Scaffold extends Command
     {
         parent::__construct();
     }
-    
+
     /**
      * Execute the console command.
      *
@@ -41,15 +40,15 @@ class Scaffold extends Command
      */
     public function handle()
     {
-        
+
         $relate   = $this->relate();
         $noRelate = $this->noRelate();
-        
+
         if (count($relate) == 0 && count($noRelate) == 0) {
             $this->info('Not found tables in Database. Please; before scaffolding, create table or tables.');
             return false;
         }
-        
+
         if ($this->confirm('Generate all controller, model and views? [y|N]')) {
             $this->info(str_repeat("=", 50));
             $backup = false;
@@ -60,11 +59,11 @@ class Scaffold extends Command
             echo 'End create scaffold.' . PHP_EOL;
             return false;
         }
-        
+
         $this->crud_code = $this->template;
         $this->_create($relate, true, $backup);
         $this->_create($noRelate, false, $backup);
-        
+
     }
-    
+
 }
