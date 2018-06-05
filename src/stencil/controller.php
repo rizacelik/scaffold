@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use App\\{$app_name};
 
 
-class {$app_name}Controller extends Controller {
+class {$app_name}Controller extends Controller
+{
 
     /**
      * Display a listing of the resource.
