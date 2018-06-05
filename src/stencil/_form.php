@@ -16,7 +16,7 @@ return <<<EOT
 <form action="<?= url('$app_var/'.\$action) ?>" method="POST" class="form-horizontal">
 <?= \$method ?>
     <fieldset>
-        $forms
+$forms
         <div class="form-group">
             <label class="control-label">&nbsp;</label>
             <input type="submit" value="Save" class="btn btn-primary">
@@ -24,4 +24,5 @@ return <<<EOT
     </fieldset>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 </form>
+
 EOT;

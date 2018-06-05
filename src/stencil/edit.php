@@ -12,4 +12,5 @@ return <<<EOT
 </p>
 </div>
 @endsection
+
 EOT;

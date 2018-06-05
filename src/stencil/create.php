@@ -11,4 +11,5 @@ return <<<EOT
 <p><a href="{{url('$app_var')}}">Back</a></p>
 </div>
 @endsection
+
 EOT;

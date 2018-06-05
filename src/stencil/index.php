@@ -23,7 +23,7 @@ foreach ($fields as $field):
     $content .= "            " . '<th>' . ucwords(str_replace('_', ' ', $field)) . '</th>' . PHP_EOL;
 endforeach;
 
-$content .= '           <th width="20%">&nbsp;</th>
+$content .= '            <th width="20%">&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -44,7 +44,6 @@ $content .= <<<EOT
                         <a href="<?=url('$app_var/delete/'.\$item->{$id})?>" class = "btn btn-danger btn-sm" onclick = "return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
                     </div>
                 </div>
-
             </td>
         </tr>
 <?php endforeach; ?>
@@ -59,5 +58,6 @@ $content .= <<<EOT
 
 </div>
 @endsection
+
 EOT;
 return $content;
